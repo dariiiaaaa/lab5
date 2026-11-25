@@ -1,0 +1,162 @@
+{
+  "task_id": 5,
+  "title": "Расчёт стоимости разработки по COCOMO II",
+  "student_name": "Глазков Тимофей Владимирович",
+  "group": "БИ ОЗФО5-1",
+  "system_name": "Единый портал поддержки предпринимателей",
+  "functional_points": 450,
+  "language": "C#",
+  "kloc_per_1000_fp": 54,
+  "reuse_fraction": 0.2,
+  "scale_factors": {
+    "PREC": 4,
+    "FLEX": 3,
+    "RESL": 3,
+    "TEAM": 4,
+    "PMAT": 3
+  },
+  "effort_multipliers": {
+    "RELY": 1.15,
+    "DATA": 1.0,
+    "CPLX": 1.15,
+    "RUSE": 1.1,
+    "DOCU": 0.0,
+    "TIME": 1.0,
+    "STOR": 1.0,
+    "PVOL": 0.0,
+    "ACAP": 1.15,
+    "PCAP": 1.1,
+    "PCON": 1.0,
+    "APEX": 1.0,
+    "PEXP": 1.0,
+    "LTEX": 1.0,
+    "TOOL": 1.0,
+    "SITE": 1.0,
+    "SCED": 1.0
+  },
+  "cocomo": {
+    "A": 2.94,
+    "B_base": 0.91,
+    "scale_step": 0.01,
+    "duration_coefficient": 2.5,
+    "duration_exponent": 0.35
+  },
+  "costs": {
+    "cost_per_person_month_rub": 220000,
+    "overhead_rate": 0.25,
+    "vat_rate": 0.2
+  },
+  "sensitivity": {
+    "reuse_fraction_values": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4
+    ],
+    "cost_per_person_month_values": [
+      180000,
+      220000,
+      260000,
+      300000
+    ],
+    "multiplier_scale_values": [
+      0.9,
+      1.0,
+      1.1
+    ]
+  },
+  "moscow_comparison": {
+    "method_name": "Методика города Москвы",
+    "coefficient_A": 5.17,
+    "coefficient_B": 0.94,
+    "factor_count": 7,
+    "conversion_coefficient": 1.064,
+    "salary_base_rub": 78300,
+    "salary_share_coefficient": 0.65,
+    "profitability_rate": 0.05,
+    "planned_duration_months": 14,
+    "vat_rate": 0.2,
+    "functional_point_coefficients": {
+      "F1": 11,
+      "F2": 8,
+      "F3": 5,
+      "F4": 5,
+      "F5": 4
+    },
+    "mt_factors": {
+      "MT1_reliability": 1.15,
+      "MT2_test_database": 1.0,
+      "MT3_integrations": 1.0,
+      "MT4_complexity": 1.15,
+      "MT5_mobile": 1.0,
+      "MT6_updates": 1.0,
+      "MT7_novelty": 1.04
+    },
+    "roles": [
+      {
+        "name": "Заместитель руководителя",
+        "headcount_coefficient": 0.058,
+        "salary_index": 1.85
+      },
+      {
+        "name": "Главный архитектор",
+        "headcount_coefficient": 0.058,
+        "salary_index": 1.7
+      },
+      {
+        "name": "Архитектор/методолог",
+        "headcount_coefficient": 0.231,
+        "salary_index": 1.4
+      },
+      {
+        "name": "Старший аналитик",
+        "headcount_coefficient": 0.058,
+        "salary_index": 0.9,
+        "index_assumption": true
+      },
+      {
+        "name": "Аналитик/разработчик",
+        "headcount_coefficient": 0.52,
+        "salary_index": 0.9
+      },
+      {
+        "name": "Тестировщик",
+        "headcount_coefficient": 0.173,
+        "salary_index": 0.75
+      }
+    ],
+    "notes": {
+      "mt_factors": "MT1–MT7 не приведены в условии задачи 5; значения приняты по характеристикам государственной информационной системы и вынесены в JSON.",
+      "duration": "14 месяцев округлены от расчётной длительности COCOMO II для соблюдения диапазона ОТр/Тп из лекции №19.",
+      "conversion": "Кпер = 1,064 взят из расчётного примера формирования НМЦК в лекции №17; он переводит базовую зарплату в текущий ценовой уровень.",
+      "senior_analyst_index": "Для старшего аналитика использован индекс аналитика/разработчика 0,90, так как отдельный индекс в таблице лекции не указан.",
+      "project_manager": "Руководитель проекта назначается отдельно и не включён в коэффициент численности, поскольку в лекции его Кч указан как 0,0.",
+      "profitability": "Базовый сценарий использует Р = 5%, как в примере лекции №17. Р = 10% сохраняется как верхний сценарий диапазона лекции №19."
+    },
+    "old_reference_not_used": {
+      "effort_range_pm": [
+        100,
+        130
+      ],
+      "total_cost_rub": 45000000
+    },
+    "profitability_rate_values": [
+      0.05,
+      0.1
+    ]
+  },
+  "display": {
+    "rub_per_mln": 1000000,
+    "decimal_places": 1
+  },
+  "scope_notes": {
+    "included_lectures": [
+      "Лекция №6 — COCOMO II",
+      "Лекция №17 — формирование НМЦК",
+      "Лекция №19 — методика города Москвы"
+    ],
+    "not_included": "Лекции №7 и №8 не включены в расчёт: для TCO, ROI и NPV отсутствуют эксплуатационные расходы, выгоды и денежные потоки.",
+    "reason": "Основная задача оценивает стоимость создания/контракта, а не инвестиционную эффективность всего жизненного цикла."
+  }
+}
